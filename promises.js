@@ -19,14 +19,16 @@ const foo = () => {
     console.log('done');
 }
 
-delay(foo, 2000).then((fn) => {
-    fn.call();
-}).catch((error) => {
+// * More succinct way
+delay(foo, 2000)
+.then(fn => fn.call())
+.catch((error) => {
     console.log(error);
 });
 
 // * Alt error catch
-delay(foo, 100).then((fn) => {
+delay(foo, 100)
+.then((fn) => {
     fn.call();
 }, (error) => {
     console.log(error);
